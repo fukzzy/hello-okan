@@ -84,6 +84,59 @@ input, textarea {
   color: #4f46e5;
 }
 
+/* --- Clock --- */
+.clock {
+  width: 200px;
+  height: 200px;
+  border: 8px solid #333;
+  border-radius: 50%;
+  position: relative;
+  margin: 40px auto;
+  background: #fff;
+}
+
+/* 針 */
+.hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom;
+  transform: translateX(-50%) rotate(0deg);
+}
+
+/* 時針 */
+.hour {
+  width: 6px;
+  height: 50px;
+  background: #333;
+}
+
+/* 分針 */
+.minute {
+  width: 4px;
+  height: 70px;
+  background: #666;
+}
+
+/* 秒針 */
+.second {
+  width: 2px;
+  height: 90px;
+  background: red;
+}
+
+/* 中心 */
+.center-dot {
+  width: 10px;
+  height: 10px;
+  background: #333;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 /* --- Responsive (スマホ対応) --- */
 @media (max-width: 600px) {
 
