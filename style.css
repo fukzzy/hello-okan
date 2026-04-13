@@ -69,9 +69,13 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: rotate(calc(30deg * var(--i)))
-             translateY(-40%)
-             rotate(calc(-30deg * var(--i)));
+
+  transform:
+    translate(-50%, -50%)
+    rotate(calc(30deg * var(--i)))
+    translateY(-120px)
+    rotate(calc(-30deg * var(--i)));
+
   font-size: 1.2rem;
   font-weight: bold;
 }
