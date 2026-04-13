@@ -25,46 +25,7 @@ body {
   padding: 24px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  margin-bottom: 20px;
-}
-
-/* --- Typography --- */
-h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-h2 {
-  margin-bottom: 10px;
-  margin-top: 20px;
-}
-
-p {
-  margin-bottom: 10px;
-}
-
-/* --- Button --- */
-.button {
-  display: inline-block;
-  padding: 10px 16px;
-  background: #4f46e5;
-  color: #fff;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: 0.2s;
-}
-
-.button:hover {
-  background: #4338ca;
-}
-
-/* --- Input --- */
-input, textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  margin-bottom: 10px;
+  text-align: center;
 }
 
 /* --- Navbar --- */
@@ -86,8 +47,10 @@ input, textarea {
 
 /* --- Clock --- */
 .clock {
-  width: 200px;
-  height: 200px;
+  width: 60vw;
+  height: 60vw;
+  max-width: 300px;
+  max-height: 300px;
   border: 8px solid #333;
   border-radius: 50%;
   position: relative;
@@ -95,7 +58,25 @@ input, textarea {
   background: #fff;
 }
 
-/* 針 */
+/* --- Numbers --- */
+.numbers {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.numbers span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: rotate(calc(30deg * var(--i)))
+             translateY(-40%)
+             rotate(calc(-30deg * var(--i)));
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* --- Hands --- */
 .hand {
   position: absolute;
   bottom: 50%;
@@ -104,28 +85,25 @@ input, textarea {
   transform: translateX(-50%) rotate(0deg);
 }
 
-/* 時針 */
 .hour {
   width: 6px;
-  height: 50px;
+  height: 25%;
   background: #333;
 }
 
-/* 分針 */
 .minute {
   width: 4px;
-  height: 70px;
+  height: 35%;
   background: #666;
 }
 
-/* 秒針 */
 .second {
   width: 2px;
-  height: 90px;
+  height: 45%;
   background: red;
 }
 
-/* 中心 */
+/* --- Center Dot --- */
 .center-dot {
   width: 10px;
   height: 10px;
@@ -137,34 +115,11 @@ input, textarea {
   transform: translate(-50%, -50%);
 }
 
-/* 数字のコンテナ */
-.numbers {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-/* 各数字 */
-.number {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform-origin: center;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-/* --- Responsive (スマホ対応) --- */
+/* --- Responsive --- */
 @media (max-width: 600px) {
-
   .container {
     margin: 20px 10px;
     padding: 10px;
-  }
-
-  .card {
-    padding: 16px;
-    border-radius: 10px;
   }
 
   h1 {
@@ -179,10 +134,5 @@ input, textarea {
 
   .navbar a {
     margin: 0;
-  }
-
-  .button {
-    width: 100%;
-    text-align: center;
   }
 }
