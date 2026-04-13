@@ -27,6 +27,25 @@ function updateClock() {
     `translateX(-50%) rotate(${hourDeg}deg)`;
 }
 
+function createNumbers() {
+  const numbersContainer = document.querySelector(".numbers");
+
+  for (let i = 1; i <= 12; i++) {
+    const num = document.createElement("div");
+    num.className = "number";
+    num.innerText = i;
+
+    const angle = i * 30; // 360 ÷ 12
+
+    num.style.transform =
+      `rotate(${angle}deg) translate(80px) rotate(-${angle}deg)`;
+
+    numbersContainer.appendChild(num);
+  }
+}
+
+createNumbers();
+   
 // 1秒ごとに更新
 setInterval(updateClock, 1000);
 
