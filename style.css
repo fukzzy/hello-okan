@@ -83,3 +83,36 @@ input, textarea {
 .navbar a:hover {
   color: #4f46e5;
 }
+
+/* --- Responsive (スマホ対応) --- */
+@media (max-width: 600px) {
+
+  .container {
+    margin: 20px 10px;
+    padding: 10px;
+  }
+
+  .card {
+    padding: 16px;
+    border-radius: 10px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .navbar a {
+    margin: 0;
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+  }
+}
