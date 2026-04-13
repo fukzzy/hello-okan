@@ -1,59 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>アナログ時計</title>
   <link rel="stylesheet" href="style.css">
-  <title>こんにちは</title>
-  <script>
-function updateClock() {
-  const now = new Date();
-
-  const seconds = now.getSeconds();
-  const minutes = now.getMinutes();
-  const hours = now.getHours();
-
-  const secondDeg = seconds * 6;
-  const minuteDeg = minutes * 6 + seconds * 0.1;
-  const hourDeg = hours * 30 + minutes * 0.5;
-
-  document.querySelector(".second").style.transform =
-    `translateX(-50%) rotate(${secondDeg}deg)`;
-
-  document.querySelector(".minute").style.transform =
-    `translateX(-50%) rotate(${minuteDeg}deg)`;
-
-  document.querySelector(".hour").style.transform =
-    `translateX(-50%) rotate(${hourDeg}deg)`;
-}
-
-function createNumbers() {
-  const numbersContainer = document.querySelector(".numbers");
-
-  for (let i = 1; i <= 12; i++) {
-    const num = document.createElement("div");
-    num.className = "number";
-    num.innerText = i;
-
-    const angle = i * 30; // 360 ÷ 12
-
-    num.style.transform =
-      `rotate(${angle}deg) translate(80px) rotate(-${angle}deg)`;
-
-    numbersContainer.appendChild(num);
-  }
-}
-
-createNumbers();
-   
-// 1秒ごとに更新
-setInterval(updateClock, 1000);
-
-// 初回実行
-updateClock();
-</script>
 </head>
 <body>
+
   <div class="navbar">
     <a href="#">Home</a>
     <a href="#">About</a>
@@ -61,19 +15,58 @@ updateClock();
 
   <div class="container">
     <div class="card">
-      <h1>Hello GitHub Pages!</h1>
-      <p>こんにちは</p>
-      <a href="#" class="button">ボタン</a>
-    </div>
+      <h1>アナログ時計</h1>
 
-    <div class="clock">
-      <div class="numbers"></div>
-      
-      <div class="hand hour"></div>
-      <div class="hand minute"></div>
-      <div class="hand second"></div>
-      <div class="center-dot"></div>
+      <div class="clock">
+        <div class="numbers">
+          <span style="--i:1">1</span>
+          <span style="--i:2">2</span>
+          <span style="--i:3">3</span>
+          <span style="--i:4">4</span>
+          <span style="--i:5">5</span>
+          <span style="--i:6">6</span>
+          <span style="--i:7">7</span>
+          <span style="--i:8">8</span>
+          <span style="--i:9">9</span>
+          <span style="--i:10">10</span>
+          <span style="--i:11">11</span>
+          <span style="--i:12">12</span>
+        </div>
+
+        <div class="hand hour"></div>
+        <div class="hand minute"></div>
+        <div class="hand second"></div>
+        <div class="center-dot"></div>
+      </div>
+
     </div>
   </div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+
+      const seconds = now.getSeconds();
+      const minutes = now.getMinutes();
+      const hours = now.getHours();
+
+      const secondDeg = seconds * 6;
+      const minuteDeg = minutes * 6 + seconds * 0.1;
+      const hourDeg = hours * 30 + minutes * 0.5;
+
+      document.querySelector(".second").style.transform =
+        `translateX(-50%) rotate(${secondDeg}deg)`;
+
+      document.querySelector(".minute").style.transform =
+        `translateX(-50%) rotate(${minuteDeg}deg)`;
+
+      document.querySelector(".hour").style.transform =
+        `translateX(-50%) rotate(${hourDeg}deg)`;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+
 </body>
 </html>
